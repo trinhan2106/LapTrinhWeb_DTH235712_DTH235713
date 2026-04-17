@@ -10,11 +10,11 @@
  */
 
 // ── Bảo vệ trang ─────────────────────────────────────────────
-require_once "../thuvien.php";
+require_once "../../thuvien.php";
 kiemTraSession();
 
 // ── Kết nối CSDL ─────────────────────────────────────────────
-require_once "../cauhinh.php";
+require_once "../../cauhinh.php";
 
 // ── Load danh sách tầng để đổ vào dropdown ───────────────────
 $sql_tang = "SELECT t.maTang, t.soTang, t.heSoGia, c.tenCaoOc

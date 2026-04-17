@@ -87,14 +87,14 @@ $totalPhongTrong = $result_count ? (int)$result_count->fetch_assoc()['total'] : 
             </p>
         </div>
         <div class="col-md-4 text-md-end mt-3 mt-md-0">
-            <a href="phong_trong.php" class="btn btn-outline-primary">
+            <a href="<?php echo BASE_URL; ?>/phong_trong.php" class="btn btn-outline-primary">
                 Xem tất cả phòng <i class="bi bi-arrow-right ms-1"></i>
             </a>
         </div>
     </div>
 
     <!-- ── THANH TÌM KIẾM NHANH (INLINE) ── -->
-    <form method="GET" action="index.php"
+    <form method="GET" action="<?php echo BASE_URL; ?>/index.php"
           class="row g-2 mb-4 p-3 bg-light rounded-3 border">
         <div class="col-md-4">
             <input type="text" name="timkiem" class="form-control"
@@ -116,7 +116,7 @@ $totalPhongTrong = $result_count ? (int)$result_count->fetch_assoc()['total'] : 
             <button type="submit" class="btn btn-primary w-100">Lọc</button>
         </div>
         <div class="col-md-2">
-            <a href="index.php" class="btn btn-outline-secondary w-100">Xóa lọc</a>
+            <a href="<?php echo BASE_URL; ?>/index.php" class="btn btn-outline-secondary w-100">Xóa lọc</a>
         </div>
     </form>
 
@@ -131,8 +131,8 @@ $totalPhongTrong = $result_count ? (int)$result_count->fetch_assoc()['total'] : 
                     <i class="bi bi-info-circle fs-1 d-block mb-3 text-info"></i>
                     <h5>Không có phòng trống phù hợp với điều kiện lọc.</h5>
                     <p class="text-muted mb-3">Thử thay đổi bộ lọc hoặc liên hệ tư vấn viên để được hỗ trợ.</p>
-                    <a href="index.php" class="btn btn-outline-primary me-2">Xóa bộ lọc</a>
-                    <a href="lien_he.php" class="btn btn-primary">Liên hệ tư vấn</a>
+                    <a href="<?php echo BASE_URL; ?>/index.php" class="btn btn-outline-primary me-2">Xóa bộ lọc</a>
+                    <a href="<?php echo BASE_URL; ?>/lien_he.php" class="btn btn-primary">Liên hệ tư vấn</a>
                 </div>
             </div>
         <?php
@@ -207,11 +207,11 @@ $totalPhongTrong = $result_count ? (int)$result_count->fetch_assoc()['total'] : 
                     <!-- Nút hành động -->
                     <div class="card-footer bg-transparent border-top-0 pb-3 px-3">
                         <div class="d-grid gap-2">
-                            <a href="dang_ky_thue.php?maPhong=<?php echo urlencode($row['maPhong']); ?>"
+                            <a href="<?php echo BASE_URL; ?>/dang_ky_thue.php?maPhong=<?php echo urlencode($row['maPhong']); ?>"
                                class="btn btn-gold btn-sm">
                                 <i class="bi bi-pencil-square me-1"></i>Đăng ký thuê phòng này
                             </a>
-                            <a href="chi_tiet_phong.php?id=<?php echo urlencode($row['maPhong']); ?>"
+                            <a href="<?php echo BASE_URL; ?>/chi_tiet_phong.php?id=<?php echo urlencode($row['maPhong']); ?>"
                                class="btn btn-outline-secondary btn-sm">
                                 <i class="bi bi-eye me-1"></i>Xem chi tiết
                             </a>

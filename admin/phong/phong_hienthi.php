@@ -6,11 +6,11 @@
  */
 
 // ── Bước 1: Kiểm tra đăng nhập ──────────────────────────────
-require_once "../thuvien.php";
+require_once "../../thuvien.php";
 kiemTraSession();
 
 // ── Bước 2: Kết nối CSDL ────────────────────────────────────
-require_once "../cauhinh.php";
+require_once "../../cauhinh.php";
 
 // ── Bước 3: Nhận tham số lọc từ URL ($_GET) ─────────────────
 $loc_trangThai = trim($_GET['trangThai'] ?? '');

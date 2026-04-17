@@ -17,10 +17,10 @@
  */
 
 // ── Bước 0: Bảo vệ – chỉ nhận GET (xóa qua link có confirm JS) ──
-require_once "../thuvien.php";
+require_once "../../thuvien.php";
 kiemTraSession();
 
-require_once "../cauhinh.php";
+require_once "../../cauhinh.php";
 
 // ── Bước 1: Lấy mã phòng từ URL ──────────────────────────────
 $maPhong = trim($_GET['id'] ?? '');
@@ -94,4 +94,4 @@ if ($conn->query($sql_xoa) === TRUE) {
 }
 
 $conn->close();
-?>
+

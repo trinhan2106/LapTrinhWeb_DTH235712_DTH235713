@@ -192,4 +192,4 @@ if ($conn->query($sql_insert) === TRUE) {
 
 // Đóng kết nối (không thực sự chạy tới đây vì đã exit() ở trên)
 $conn->close();
-?>
+

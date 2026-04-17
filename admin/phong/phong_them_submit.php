@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
 }
 
 // ── Kết nối CSDL ─────────────────────────────────────────────────
-require_once "../cauhinh.php";
+require_once "../../cauhinh.php";
 
 // ── Bước 1: Lấy dữ liệu từ FORM ($_POST) ────────────────────────
 $maPhong      = trim($_POST['maPhong']      ?? '');
@@ -121,4 +121,4 @@ if ($conn->query($sql_insert) === TRUE) {
 }
 
 $conn->close();
-?>
+

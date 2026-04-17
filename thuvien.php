@@ -39,6 +39,17 @@ function e($chuoi) {
     return htmlspecialchars($chuoi ?? '', ENT_QUOTES, 'UTF-8');
 }
 
+/**
+ * Chống SQL Injection bằng cách escape các ký tự đặc biệt
+ *
+ * @param mysqli $conn  Kết nối
+ * @param string $chuoi Chuỗi cần làm sạch
+ * @return string
+ */
+function chongSQLInjection($conn, $chuoi) {
+    return $conn->real_escape_string($chuoi ?? '');
+}
+
 // ============================================================
 // NHÓM 2: KIỂM TRA SESSION & PHÂN QUYỀN
 // ============================================================
@@ -58,7 +69,8 @@ function kiemTraSession() {
         session_start();
     }
     if (!isset($_SESSION['maNV']) || empty($_SESSION['maNV'])) {
-        header("Location: ../dangnhap.php");
+        // Chuyển hướng về trang đăng nhập ở Root
+        header("Location: " . BASE_URL . "/dangnhap.php");
         exit();
     }
 }
@@ -180,5 +192,4 @@ function badgeTrangThaiHD_HoaDon($trangThai) {
         case 'ConNo':  return '<span class="badge bg-danger">⚠️ Còn nợ</span>';
         default:       return '<span class="badge bg-secondary">' . e($trangThai) . '</span>';
     }
-}
-?>
+}

@@ -1,0 +1,41 @@
+/**
+ * BUSINESS.CSS
+ * Editorial Status Themes & ERP Badges
+ */
+
+/* Unified Status Badges [User Blueprint] */
+.status-badge {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    padding: 0.35rem 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    border-radius: 0;
+    font-weight: 600;
+    display: inline-block;
+}
+
+/* Adjusted colors for Editorial System */
+.status-empty { /* Trống - Green */
+    color: #2D5A27;
+    background-color: rgba(45, 90, 39, 0.05);
+    border: 1px solid rgba(45, 90, 39, 0.15);
+}
+
+.status-debt { /* Nợ - Red */
+    color: #8B1A1A;
+    background-color: rgba(139, 26, 26, 0.05);
+    border: 1px solid rgba(139, 26, 26, 0.15);
+}
+
+.status-warning { /* Cảnh báo - Orange */
+    color: #A67000;
+    background-color: rgba(166, 112, 0, 0.05);
+    border: 1px solid rgba(166, 112, 0, 0.15);
+}
+
+.status-gold { /* Special - Gold */
+    color: var(--accent-gold);
+    background-color: rgba(184, 134, 11, 0.05);
+    border: 1px solid rgba(184, 134, 11, 0.15);
+}

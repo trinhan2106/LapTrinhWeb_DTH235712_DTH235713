@@ -1,0 +1,54 @@
+/**
+ * LAYOUT.CSS
+ * Editorial Grid & Spacing
+ */
+
+.container-editorial {
+    max-width: var(--container-max);
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+/* Responsive Whitespace [User Blueprint] */
+.section-editorial {
+    padding-top: var(--section-pad-y);
+    padding-bottom: var(--section-pad-y);
+}
+
+@media (max-width: 768px) {
+    .section-editorial {
+        padding-top: var(--section-pad-y-mobile);
+        padding-bottom: var(--section-pad-y-mobile);
+    }
+}
+
+/* Editorial Rules (1px lines) */
+.rule-editorial {
+    border: 0;
+    border-top: 1px solid var(--ed-border);
+    margin: 4rem 0;
+    opacity: 1;
+}
+
+.rule-editorial-thin {
+    border-top: 1px solid var(--ed-border);
+    width: 100%;
+    margin: 1rem 0;
+}
+
+/* Typography Overrides */
+h1, h2, h3, h4, .serif-font {
+    font-family: var(--font-serif);
+    font-weight: 500;
+    letter-spacing: -0.02em;
+}
+
+.label-mono {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    font-size: 0.75rem;
+    color: var(--ed-accent);
+}

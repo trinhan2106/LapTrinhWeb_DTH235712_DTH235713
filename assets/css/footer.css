@@ -1,0 +1,51 @@
+/**
+ * FOOTER.CSS
+ * Editorial Magazine Footer Stylings
+ */
+
+.footer-editorial {
+    background-color: var(--bg-ivory);
+    border-top: 1px solid var(--border-soft);
+    padding-top: 5rem;
+    padding-bottom: 2rem;
+    margin-top: 6rem;
+}
+
+.footer-editorial h6 {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-gold);
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.footer-editorial ul li {
+    margin-bottom: 0.6rem;
+}
+
+.footer-editorial ul li a {
+    color: var(--text-black);
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: var(--transition-base);
+    opacity: 0.8;
+}
+
+.footer-editorial ul li a:hover {
+    color: var(--accent-gold);
+    opacity: 1;
+    padding-left: 4px;
+}
+
+.footer-editorial .copyright {
+    border-top: 1px solid var(--border-soft);
+    margin-top: 4rem;
+    padding-top: 2rem;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: rgba(26, 26, 26, 0.4);
+}

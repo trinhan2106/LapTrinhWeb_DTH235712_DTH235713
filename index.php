@@ -87,22 +87,24 @@ $totalPhongTrong = $result_count ? (int)$result_count->fetch_assoc()['total'] : 
             </p>
         </div>
         <div class="col-md-4 text-md-end mt-3 mt-md-0">
-            <a href="<?php echo BASE_URL; ?>/phong_trong.php" class="btn btn-outline-primary">
-                Xem tất cả phòng <i class="bi bi-arrow-right ms-1"></i>
+            <a href="<?php echo BASE_URL; ?>/phong_trong.php" class="btn-premium-outline px-4 py-2">
+                Xem tất cả phòng <i class="bi bi-arrow-right ms-2"></i>
             </a>
         </div>
     </div>
 
     <!-- ── THANH TÌM KIẾM NHANH (INLINE) ── -->
     <form method="GET" action="<?php echo BASE_URL; ?>/index.php"
-          class="row g-2 mb-4 p-3 bg-light rounded-3 border">
+          class="row g-2 mb-5 p-4 bg-white border-bottom border-top">
         <div class="col-md-4">
-            <input type="text" name="timkiem" class="form-control"
+            <label class="form-premium-label">Từ khóa</label>
+            <input type="text" name="timkiem" class="form-premium-control"
                    placeholder="🔍 Tìm theo mã phòng, tên cao ốc..."
                    value="<?php echo e($loc_timkiem); ?>">
         </div>
         <div class="col-md-3">
-            <select name="dienTich_min" class="form-select">
+            <label class="form-premium-label">Diện tích</label>
+            <select name="dienTich_min" class="form-premium-control">
                 <option value="">Tất cả diện tích</option>
                 <?php
                 foreach ([30, 50, 80, 100, 150] as $dt) {
@@ -113,10 +115,10 @@ $totalPhongTrong = $result_count ? (int)$result_count->fetch_assoc()['total'] : 
             </select>
         </div>
         <div class="col-md-2">
-            <button type="submit" class="btn btn-primary w-100">Lọc</button>
+            <button type="submit" class="btn-premium w-100">Lọc</button>
         </div>
         <div class="col-md-2">
-            <a href="<?php echo BASE_URL; ?>/index.php" class="btn btn-outline-secondary w-100">Xóa lọc</a>
+            <a href="<?php echo BASE_URL; ?>/index.php" class="btn-premium-outline w-100">Xóa lọc</a>
         </div>
     </form>
 
@@ -208,12 +210,12 @@ $totalPhongTrong = $result_count ? (int)$result_count->fetch_assoc()['total'] : 
                     <div class="card-footer bg-transparent border-top-0 pb-3 px-3">
                         <div class="d-grid gap-2">
                             <a href="<?php echo BASE_URL; ?>/dang_ky_thue.php?maPhong=<?php echo urlencode($row['maPhong']); ?>"
-                               class="btn btn-gold btn-sm">
-                                <i class="bi bi-pencil-square me-1"></i>Đăng ký thuê phòng này
+                               class="btn-premium-gold btn-sm">
+                                <i class="bi bi-pencil-square me-2"></i>Đăng ký thuê phòng này
                             </a>
                             <a href="<?php echo BASE_URL; ?>/chi_tiet_phong.php?id=<?php echo urlencode($row['maPhong']); ?>"
-                               class="btn btn-outline-secondary btn-sm">
-                                <i class="bi bi-eye me-1"></i>Xem chi tiết
+                               class="btn-premium-outline btn-sm">
+                                <i class="bi bi-eye me-2"></i>Xem chi tiết
                             </a>
                         </div>
                     </div>

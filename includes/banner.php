@@ -19,107 +19,79 @@ $bannerSubtitle = $bannerSubtitle ?? 'Hệ thống quản lý và cho thuê văn
 $showSearch     = $showSearch     ?? false;
 ?>
 
-<!-- ── HERO BANNER ────────────────────────────────────────── -->
-<section
-    class="py-5 text-white position-relative overflow-hidden"
-    style="background: linear-gradient(135deg, #1a3c6e 0%, #2a5298 50%, #1a3c6e 100%);
-           min-height: 260px;">
+<!-- ── HERO BANNER (Editorial Edition) ────────────────────────── -->
+<section class="position-relative overflow-hidden" 
+         style="background-color: var(--text-black); min-height: 480px; display: flex; align-items: center;">
 
-    <!-- Vòng trang trí nền (decorative circles) -->
-    <div class="position-absolute top-0 end-0 opacity-10"
-         style="width:400px; height:400px; border-radius:50%;
-                background: radial-gradient(circle, #ffffff 0%, transparent 70%);
-                transform: translate(100px, -150px);"></div>
-    <div class="position-absolute bottom-0 start-0 opacity-10"
-         style="width:300px; height:300px; border-radius:50%;
-                background: radial-gradient(circle, #e8a020 0%, transparent 70%);
-                transform: translate(-100px, 100px);"></div>
+    <!-- Background Image with Overlay -->
+    <div class="position-absolute top-0 start-0 w-100 h-100" 
+         style="background: linear-gradient(90deg, var(--text-black) 30%, rgba(26, 26, 26, 0.4) 100%), 
+                     url('<?php echo BASE_URL; ?>/assets/images/hero-banner.png');
+                background-size: cover;
+                background-position: center;
+                opacity: 0.85;"></div>
 
-    <div class="container position-relative">
+    <!-- Subtle Gold Accent Glow -->
+    <div class="position-absolute bottom-0 start-0 w-100" 
+         style="height: 1px; background: linear-gradient(90deg, transparent, var(--accent-gold), transparent); opacity: 0.3;"></div>
+
+    <div class="container position-relative py-5">
         <div class="row align-items-center">
 
             <!-- Nội dung banner bên trái -->
             <div class="col-lg-7 py-3">
+                <div class="text-ivory">
+                    <span class="mono-label mb-3 d-block" style="color: var(--accent-gold); letter-spacing: 0.2em;">PREMIUM RESIDENCE</span>
+                    <h1 class="serif-heading mb-4" style="font-size: clamp(2rem, 5vw, 3.5rem); line-height: 1.1; color: var(--bg-ivory);">
+                        <?php echo $bannerTitle; ?>
+                    </h1>
+                    <p class="mb-5" style="font-size: 1.15rem; max-width: 550px; line-height: 1.8; color: rgba(250, 250, 248, 0.75);">
+                        <?php echo e($bannerSubtitle); ?>
+                    </p>
 
-                <!-- Tiêu đề chính -->
-                <h1 class="fw-bold mb-3" style="font-size: clamp(1.6rem, 4vw, 2.5rem); line-height:1.3;">
-                    <?php
-                    /*
-                     * $bannerTitle được render trực tiếp (KHÔNG escape)
-                     * vì nó chứa HTML như <span class="text-warning">
-                     * → Chỉ dùng với dữ liệu do DEVELOPER khai báo, KHÔNG phải từ người dùng nhập
-                     */
-                    echo $bannerTitle;
-                    ?>
-                </h1>
-
-                <!-- Phụ đề -->
-                <p class="mb-4 opacity-85"
-                   style="font-size:1.05rem; max-width:520px; line-height:1.7; color:#c8d8f0;">
-                    <?php echo e($bannerSubtitle); ?>
-                </p>
-
-                <!-- Nhóm nút CTA -->
-                <div class="d-flex flex-wrap gap-2">
-                    <a href="phong_trong.php"
-                       class="btn btn-warning fw-semibold px-4 py-2">
-                        <i class="bi bi-door-open me-1"></i>Xem phòng trống
-                    </a>
-                    <a href="dang_ky_thue.php"
-                       class="btn btn-outline-light px-4 py-2">
-                        <i class="bi bi-pencil-square me-1"></i>Đăng ký thuê
-                    </a>
+                    <!-- Nhóm nút CTA -->
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="phong_trong.php" class="btn-premium-gold px-5 py-3 shadow-lg">
+                            <i class="bi bi-door-open me-2"></i>Xem phòng trống
+                        </a>
+                        <a href="dang_ky_thue.php" class="btn-premium-outline-white px-5 py-3">
+                            <i class="bi bi-pencil-square me-2"></i>Đăng ký thuê
+                        </a>
+                    </div>
                 </div>
+            </div><!-- end col left -->
 
-            </div><!-- end col banner left -->
-
-            <!-- Phần bên phải: Ô tìm kiếm nhanh (chỉ hiện nếu $showSearch = true) -->
+            <!-- Phần bên phải: Ô tìm kiếm nhanh -->
             <?php if ($showSearch): ?>
-            <div class="col-lg-5 mt-4 mt-lg-0">
-                <div class="bg-white rounded-4 p-4 shadow-lg">
-                    <h6 class="fw-bold text-dark mb-3">
-                        <i class="bi bi-search me-2 text-primary"></i>Tìm phòng nhanh
-                    </h6>
-                    <!--
-                        Form tìm kiếm nhanh trong banner.
-                        Submit GET về index.php để lọc danh sách phòng.
-                    -->
+            <div class="col-lg-5 mt-5 mt-lg-0">
+                <div class="bg-white p-5 shadow-2xl border-0" style="backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1);">
+                    <div class="mb-4">
+                        <h4 class="serif-heading mb-1" style="font-size: 1.5rem;">TÌM KIẾM NHANH</h4>
+                        <div class="rule-premium" style="width: 40px; margin: 0;"></div>
+                    </div>
+                    
                     <form method="GET" action="index.php">
-
-                        <!-- Tìm theo từ khóa -->
-                        <div class="mb-3">
-                            <label class="form-label small fw-semibold text-muted">
-                                Từ khóa (mã phòng, tên cao ốc)
-                            </label>
-                            <input type="text" name="timkiem" class="form-control form-control-sm"
-                                   placeholder="VD: P-001, Vinhomes...">
+                        <div class="mb-4">
+                            <label class="form-premium-label">Từ khóa search</label>
+                            <input type="text" name="timkiem" class="form-premium-control" placeholder="Mã phòng, tên tòa nhà...">
                         </div>
 
-                        <!-- Lọc diện tích tối thiểu -->
-                        <div class="mb-3">
-                            <label class="form-label small fw-semibold text-muted">
-                                Diện tích tối thiểu
-                            </label>
-                            <select name="dienTich_min" class="form-select form-select-sm">
+                        <div class="mb-4">
+                            <label class="form-premium-label">Diện tích min</label>
+                            <select name="dienTich_min" class="form-premium-control">
                                 <option value="">Không giới hạn</option>
                                 <?php
-                                // Danh sách diện tích được hardcode vì đây là tùy chọn lọc UI
-                                // (không phải dữ liệu nghiệp vụ từ DB)
-                                foreach ([30 => '30 m²', 50 => '50 m²', 80 => '80 m²',
-                                          100 => '100 m²', 150 => '150 m² trở lên'] as $val => $lbl) {
+                                foreach ([30 => '30 m²', 50 => '50 m²', 80 => '80 m²', 150 => '150 m²+'] as $val => $lbl) {
                                     printf('<option value="%d">%s</option>', $val, $lbl);
                                 }
                                 ?>
                             </select>
                         </div>
 
-                        <!-- Lọc số chỗ làm việc -->
-                        <div class="mb-3">
-                            <label class="form-label small fw-semibold text-muted">
-                                Số chỗ làm việc tối thiểu
-                            </label>
-                            <select name="socho_min" class="form-select form-select-sm">
-                                <option value="">Không giới hạn</option>
+                        <div class="mb-5">
+                            <label class="form-premium-label">Số chỗ ngồi</label>
+                            <select name="socho_min" class="form-premium-control">
+                                <option value="">Tất cả quy mô</option>
                                 <?php
                                 foreach ([5 => '5+ chỗ', 10 => '10+ chỗ', 20 => '20+ chỗ', 50 => '50+ chỗ'] as $val => $lbl) {
                                     printf('<option value="%d">%s</option>', $val, $lbl);
@@ -128,16 +100,14 @@ $showSearch     = $showSearch     ?? false;
                             </select>
                         </div>
 
-                        <button type="submit" class="btn btn-primary w-100 fw-semibold">
-                            <i class="bi bi-search me-1"></i>Tìm kiếm phòng
+                        <button type="submit" class="btn-premium w-100 py-3">
+                            <i class="bi bi-search me-2"></i> BẮT ĐẦU TÌM KIẾM
                         </button>
-
                     </form>
                 </div>
-            </div><!-- end col search -->
+            </div>
             <?php endif; ?>
 
         </div><!-- end row -->
     </div><!-- end container -->
-
-</section><!-- end hero banner -->
+</section>

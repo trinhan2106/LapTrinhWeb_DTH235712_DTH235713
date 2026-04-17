@@ -1,130 +1,77 @@
-<!--
-    NAVBAR.PHP – Thanh điều hướng (Navigation Bar) dùng chung cho trang Public
-    Gọi bằng: include_once "includes/navbar.php";
-
-    Tự động đánh dấu menu "active" dựa trên tên file đang chạy ($currentPage).
-    Khai báo $currentPage TRƯỚC khi include:
-        $currentPage = "index";        // Trang chủ
-        $currentPage = "phong_trong";  // Danh sách phòng
-        $currentPage = "lien_he";      // Liên hệ
-        $currentPage = "dang_ky_thue"; // Đăng ký thuê
--->
 <?php
-// Bắt đầu session nếu chưa có để lấy thông tin đăng nhập
+/**
+ * NAVBAR.PHP – Editorial Edition
+ * Custom navigation system using the Serif Design System
+ */
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 
-// Xác định trang hiện tại để đánh dấu "active" trên menu
+// Current page logic for Active state
 $currentPage = $currentPage ?? '';
 
-/**
- * Hàm trả về class "active" nếu $pageName trùng với $currentPage
- */
 function isActive($pageName) {
     global $currentPage;
-    return ($currentPage === $pageName) ? 'active fw-bold' : '';
+    return ($currentPage === $pageName) ? 'active' : '';
 }
 
-// Lấy thông tin session
-$quyenHan = $_SESSION['quyenHan'] ?? -1; // -1 nghĩa là chưa đăng nhập
+$quyenHan = $_SESSION['quyenHan'] ?? -1;
 $tenHienThi = $_SESSION['tenNV'] ?? $_SESSION['tenKH'] ?? '';
 ?>
 
-<nav class="navbar navbar-expand-lg sticky-top shadow-sm"
-     style="background-color: #1a3c6e;">
+<!-- Clean Editorial Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top navbar-editorial">
+    <div class="container-editorial d-flex align-items-center justify-content-between w-100">
 
-    <div class="container">
-
-        <!-- ── LOGO & TÊN THƯƠNG HIỆU ── -->
-        <a class="navbar-brand d-flex align-items-center gap-2 text-white" href="<?php echo BASE_URL; ?>/index.php">
-            <span style="font-size:1.6rem;">🏢</span>
-            <div class="lh-1">
-                <div class="fw-bold fs-5">CAOCENTER</div>
-                <div class="text-warning" style="font-size:.7rem; letter-spacing:1px;">
-                    CHO THUÊ VĂN PHÒNG CAO ỐC
-                </div>
-            </div>
+        <!-- ── LOGO BRANDING ── -->
+        <a class="navbar-brand" href="<?php echo BASE_URL; ?>/index.php">
+            CAOCENTER
         </a>
 
-        <!-- ── NÚT HAMBURGER (mobile) ── -->
-        <button class="navbar-toggler border-secondary" type="button"
-                data-bs-toggle="collapse" data-bs-target="#mainNav">
-            <span class="navbar-toggler-icon"></span>
+        <!-- ── MOBILE TOGGLE ── -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#editorialNavbar">
+            <span class="bi bi-list fs-2"></span>
         </button>
 
-        <!-- ── MENU CÁC TRANG ── -->
-        <div class="collapse navbar-collapse" id="mainNav">
-
-            <ul class="navbar-nav mx-auto gap-1">
-
+        <!-- ── NAVIGATION LINKS ── -->
+        <div class="collapse navbar-collapse" id="editorialNavbar">
+            <ul class="navbar-nav mx-auto">
                 <li class="nav-item">
-                    <a class="nav-link text-white <?php echo isActive('index'); ?>"
-                       href="<?php echo BASE_URL; ?>/index.php">
-                        <i class="bi bi-house-door me-1"></i>Trang chủ
+                    <a class="nav-link <?php echo isActive('index'); ?>" href="<?php echo BASE_URL; ?>/index.php">
+                        Trang chủ
                     </a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link text-white <?php echo isActive('phong_trong'); ?>"
-                       href="<?php echo BASE_URL; ?>/phong_trong.php">
-                        <i class="bi bi-door-open me-1"></i>Phòng trống
+                    <a class="nav-link <?php echo isActive('phong_trong'); ?>" href="<?php echo BASE_URL; ?>/phong_trong.php">
+                        Phòng trống
                     </a>
                 </li>
-
                 <li class="nav-item">
-                    <a class="nav-link text-white <?php echo isActive('gioi_thieu'); ?>"
-                       href="<?php echo BASE_URL; ?>/gioi_thieu.php">
-                        <i class="bi bi-info-circle me-1"></i>Giới thiệu
+                    <a class="nav-link <?php echo isActive('lien_he'); ?>" href="<?php echo BASE_URL; ?>/lien_he.php">
+                        Liên hệ
                     </a>
                 </li>
-
-                <li class="nav-item">
-                    <a class="nav-link text-white <?php echo isActive('lien_he'); ?>"
-                       href="<?php echo BASE_URL; ?>/lien_he.php">
-                        <i class="bi bi-telephone me-1"></i>Liên hệ
-                    </a>
-                </li>
-
             </ul>
 
-            <!-- ── KHU VỰC ĐĂNG NHẬP / THÀNH VIÊN ── -->
-            <div class="d-flex align-items-center gap-2">
+            <!-- ── AUTHENTICATION AREA ── -->
+            <div class="d-flex align-items-center gap-3">
                 <?php if ($quyenHan === -1): ?>
-                    <!-- CHƯA ĐĂNG NHẬP -->
-                    <a href="<?php echo BASE_URL; ?>/dang_ky_thue.php" class="btn btn-warning btn-sm fw-semibold px-3">
-                        <i class="bi bi-pencil-square me-1"></i>Đăng ký thuê
+                    <a href="<?php echo BASE_URL; ?>/dangnhap.php" class="nav-link p-0 m-0" style="font-size: 0.85rem;">
+                        ĐĂNG NHẬP
                     </a>
-                    <a href="<?php echo BASE_URL; ?>/dangnhap.php" class="btn btn-outline-light btn-sm px-3">
-                        <i class="bi bi-person-circle me-1"></i>Đăng nhập
-                    </a>
-
-                <?php elseif ($quyenHan > 0): ?>
-                    <!-- LÀ NHÂN VIÊN (ADMIN/QUẢN LÝ) -->
-                    <span class="text-white small me-2">
-                        👋 Xin chào Nhân viên: <strong><?php echo e($tenHienThi); ?></strong>
-                    </span>
-                    <a href="<?php echo BASE_URL; ?>/admin/cao_oc/cao_oc_hienthi.php" class="btn btn-primary btn-sm px-3 border-light">
-                        <i class="bi bi-speedometer2 me-1"></i>Vào Quản trị
-                    </a>
-                    <a href="<?php echo BASE_URL; ?>/dangxuat.php" class="btn btn-outline-danger btn-sm px-2 border-danger-subtle bg-danger bg-opacity-10 text-white">
-                        <i class="bi bi-box-arrow-right"></i>
+                    <a href="<?php echo BASE_URL; ?>/dang_ky_thue.php" class="btn-premium py-2 px-4 shadow-sm" style="font-size: 0.8rem;">
+                        ĐĂNG KÝ
                     </a>
 
                 <?php else: ?>
-                    <!-- LÀ KHÁCH HÀNG (quyenHan == 0) -->
-                    <span class="text-white small me-2">
-                        👋 Xin chào: <strong><?php echo e($tenHienThi); ?></strong>
+                    <span class="mono-label m-0" style="font-size: 0.75rem;">
+                        Chào, <?php echo $tenHienThi; ?>
                     </span>
-                    <a href="<?php echo BASE_URL; ?>/khach_hang/my_contracts.php" class="btn btn-success btn-sm px-3">
-                        <i class="bi bi-file-earmark-text me-1"></i>Hợp đồng của tôi
-                    </a>
-                    <a href="<?php echo BASE_URL; ?>/admin/dangxuat.php" class="btn btn-outline-danger btn-sm px-2 border-danger-subtle bg-danger bg-opacity-10 text-white">
+                    <a href="<?php echo BASE_URL; ?>/dangxuat.php" class="text-dark">
                         <i class="bi bi-box-arrow-right"></i>
                     </a>
                 <?php endif; ?>
             </div>
-
         </div>
     </div>
 </nav>

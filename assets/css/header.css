@@ -1,0 +1,56 @@
+/**
+ * HEADER.CSS
+ * Editorial Magazine Navbar Stylings
+ */
+
+.navbar-editorial {
+    padding: 1.25rem 0;
+    background-color: var(--bg-ivory) !important;
+    border-bottom: 1px solid var(--border-soft);
+    transition: var(--transition-base);
+}
+
+.navbar-editorial .navbar-brand {
+    font-family: var(--font-serif);
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--text-black) !important;
+    letter-spacing: -0.02em;
+}
+
+.navbar-editorial .nav-link {
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-black) !important;
+    padding: 0.25rem 0 !important;
+    margin: 0 1.25rem;
+    position: relative;
+    transition: var(--transition-base);
+}
+
+/* Hover & Active States [User Blueprint] */
+.navbar-editorial .nav-link:hover,
+.navbar-editorial .nav-link.active {
+    color: var(--accent-gold) !important;
+}
+
+.navbar-editorial .nav-link.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--accent-gold);
+}
+
+.navbar-toggler {
+    border: none;
+    color: var(--text-black);
+}
+
+.navbar-toggler:focus {
+    box-shadow: none;
+}

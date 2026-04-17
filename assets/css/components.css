@@ -1,0 +1,139 @@
+/**
+ * COMPONENTS.CSS
+ * Editorial Specific Components & UI Elements
+ */
+
+/* ── PREMIUM BUTTON SYSTEM [User Blueprint] ── */
+
+/* Base Premium Style */
+.btn-premium,
+.btn-premium-gold,
+.btn-premium-outline {
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    padding: 0.8rem 2rem;
+    border-radius: 0 !important; /* Forces sharp edges */
+    transition: var(--transition-base);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+/* Primary: Solid Black */
+.btn-premium {
+    background-color: var(--text-black);
+    color: var(--bg-ivory);
+    border-color: var(--text-black);
+}
+
+.btn-premium:hover {
+    background-color: var(--accent-gold);
+    border-color: var(--accent-gold);
+    color: var(--text-black);
+}
+
+/* Secondary: Solid Gold */
+.btn-premium-gold {
+    background-color: var(--accent-gold);
+    color: var(--text-black);
+    border-color: var(--accent-gold);
+}
+
+.btn-premium-gold:hover {
+    background-color: var(--text-black);
+    border-color: var(--text-black);
+    color: var(--bg-ivory);
+}
+
+/* Tertiary: Outline */
+.btn-premium-outline {
+    background-color: transparent;
+    color: var(--text-black);
+    border-color: var(--text-black);
+}
+
+.btn-premium-outline:hover {
+    background-color: var(--text-black);
+    color: var(--bg-ivory);
+}
+
+/* White Variation (for dark backgrounds) */
+.btn-premium-outline-white {
+    background-color: transparent;
+    color: #FFFFFF;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+.btn-premium-outline-white:hover {
+    background-color: #FFFFFF;
+    color: var(--text-black);
+    border-color: #FFFFFF;
+}
+
+/* ── EDITORIAL PROPERTY CARD ── */
+.card-phong-editorial {
+    background-color: #FFFFFF;
+    border: 1px solid var(--border-soft);
+    border-radius: 0;
+    padding: 1.5rem;
+    transition: var(--transition-base);
+}
+
+.card-phong-editorial:hover {
+    border-color: var(--accent-gold);
+    transform: translateY(-5px);
+}
+
+/* ── PREMIUM FORM SYSTEM [User Blueprint] ── */
+
+.form-premium-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--accent-gold);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.form-premium-control {
+    width: 100%;
+    padding: var(--input-pad);
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: 0 !important;
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--text-black);
+    transition: var(--transition-base);
+}
+
+.form-premium-control:focus {
+    outline: none;
+    border-color: var(--accent-gold);
+    box-shadow: 0 4px 12px rgba(184, 134, 11, 0.1);
+}
+
+.form-premium-control::placeholder {
+    color: #AAA;
+    font-size: 0.9rem;
+}
+
+/* Editorial Input Group Style */
+.input-group-editorial {
+    display: flex;
+    border: 1px solid var(--input-border);
+    background: #FFF;
+}
+
+.input-group-editorial .form-premium-control {
+    border: none;
+}

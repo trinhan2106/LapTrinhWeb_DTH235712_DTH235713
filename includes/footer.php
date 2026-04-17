@@ -1,129 +1,65 @@
-<!--
-    FOOTER.PHP – Thông tin cuối trang dùng chung
-    Gọi bằng: include_once "includes/footer.php";
+<!-- ── FOOTER.PHP - Editorial Edition ── -->
 
-    Phải được đặt CUỐI CÙNG trong body, trước </body>
--->
+<footer class="footer-editorial">
+    <div class="container-editorial">
+        <div class="row g-5">
 
-<!-- ── FOOTER CHÍNH ───────────────────────────────────────── -->
-<footer class="pt-5 pb-3 mt-5">
-    <div class="container">
-        <div class="row g-4">
-
-            <!-- Cột 1: Giới thiệu công ty -->
-            <div class="col-md-4">
-                <div class="d-flex align-items-center gap-2 mb-3">
-                    <span style="font-size:2rem;">🏢</span>
-                    <div>
-                        <div class="text-white fw-bold fs-5">CAOCENTER</div>
-                        <div class="text-warning small">Cho thuê Văn phòng Cao ốc</div>
-                    </div>
+            <!-- Cột 1: Branding & Intro -->
+            <div class="col-lg-5">
+                <div class="mb-4">
+                    <h2 class="serif-heading mb-1" style="font-size: 1.8rem; letter-spacing: -0.02em;">CAOCENTER</h2>
+                    <span class="mono-label">PREMIUM REAL ESTATE MANAGEMENT</span>
                 </div>
-                <p class="small" style="color:#aab4be; line-height:1.7;">
-                    Hệ thống quản lý và cho thuê văn phòng chuyên nghiệp. 
-                    Không gian làm việc hiện đại, tiện nghi tại các vị trí 
-                    đắc địa trong thành phố.
+                <p class="text-muted" style="max-width: 400px; line-height: 1.8; font-size: 0.95rem;">
+                    Hệ thống quản lý và cho thuê văn phòng cao ốc chuyên nghiệp. 
+                    Chúng tôi cung cấp không gian làm việc đẳng cấp, 
+                    thúc đẩy sự sáng tạo và thành công của doanh nghiệp bạn.
                 </p>
-                <!-- Icon mạng xã hội -->
-                <div class="d-flex gap-2 mt-3">
-                    <a href="#" class="btn btn-sm btn-outline-secondary text-white border-secondary">
-                        <i class="bi bi-facebook"></i>
-                    </a>
-                    <a href="#" class="btn btn-sm btn-outline-secondary text-white border-secondary">
-                        <i class="bi bi-youtube"></i>
-                    </a>
-                    <a href="#" class="btn btn-sm btn-outline-secondary text-white border-secondary">
-                        <i class="bi bi-envelope"></i>
-                    </a>
+                <div class="d-flex gap-3 mt-4">
+                    <a href="#" class="text-dark"><i class="bi bi-facebook fs-5"></i></a>
+                    <a href="#" class="text-dark"><i class="bi bi-instagram fs-5"></i></a>
+                    <a href="#" class="text-dark"><i class="bi bi-linkedin fs-5"></i></a>
                 </div>
             </div>
 
-            <!-- Cột 2: Liên kết nhanh -->
-            <div class="col-md-2">
-                <h6 class="text-white fw-bold mb-3 text-uppercase" style="letter-spacing:1px;">
-                    Liên kết
-                </h6>
-                <ul class="list-unstyled small">
-                    <li class="mb-2"><a href="index.php">🏠 Trang chủ</a></li>
-                    <li class="mb-2"><a href="phong_trong.php">🚪 Phòng trống</a></li>
-                    <li class="mb-2"><a href="gioi_thieu.php">ℹ️ Giới thiệu</a></li>
-                    <li class="mb-2"><a href="dang_ky_thue.php">📝 Đăng ký thuê</a></li>
-                    <li class="mb-2"><a href="lien_he.php">📞 Liên hệ</a></li>
+            <!-- Cột 2: Quick Links -->
+            <div class="col-lg-3">
+                <h6>KHÁM PHÁ</h6>
+                <ul class="list-unstyled">
+                    <li><a href="index.php">Trang chủ</a></li>
+                    <li><a href="phong_trong.php">Danh sách phòng trống</a></li>
+                    <li><a href="gioi_thieu.php">Về chúng tôi</a></li>
+                    <li><a href="lien_he.php">Liên hệ tư vấn</a></li>
                 </ul>
             </div>
 
-            <!-- Cột 3: Thông tin liên hệ -->
-            <div class="col-md-3">
-                <h6 class="text-white fw-bold mb-3 text-uppercase" style="letter-spacing:1px;">
-                    Liên hệ
-                </h6>
-                <ul class="list-unstyled small" style="color:#aab4be;">
-                    <li class="mb-2">
-                        <i class="bi bi-geo-alt-fill text-warning me-2"></i>
-                        123 Đường Láng, Đống Đa, Hà Nội
-                    </li>
-                    <li class="mb-2">
-                        <i class="bi bi-telephone-fill text-warning me-2"></i>
-                        (028) 1234 5678
-                    </li>
-                    <li class="mb-2">
-                        <i class="bi bi-envelope-fill text-warning me-2"></i>
-                        lienhe@caocenter.vn
-                    </li>
-                    <li class="mb-2">
-                        <i class="bi bi-clock-fill text-warning me-2"></i>
-                        Thứ 2 – Thứ 6: 8:00 – 17:30
-                    </li>
-                </ul>
-            </div>
-
-            <!-- Cột 4: Giờ làm việc / Bản đồ -->
-            <div class="col-md-3">
-                <h6 class="text-white fw-bold mb-3 text-uppercase" style="letter-spacing:1px;">
-                    Hỗ trợ khách hàng
-                </h6>
-                <div class="card bg-white bg-opacity-10 border-0 rounded-3 p-3">
-                    <div class="small text-white">
-                        <div class="mb-2">
-                            <i class="bi bi-headset text-warning me-2"></i>
-                            <strong>Hotline tư vấn:</strong>
-                        </div>
-                        <div class="fs-5 fw-bold text-warning mb-2">0909 123 456</div>
-                        <div style="color:#aab4be;">
-                            Miễn phí · Hoạt động 7 ngày/tuần
-                        </div>
-                    </div>
+            <!-- Cột 3: Contact & Support -->
+            <div class="col-lg-4">
+                <h6>HỖ TRỢ TẬN TÂM</h6>
+                <div class="mb-4">
+                    <div class="fs-4 fw-bold serif-heading" style="color: var(--accent-gold);">0909 123 456</div>
+                    <p class="small text-muted">Hoạt động 24/7 cho mọi yêu cầu của bạn</p>
                 </div>
-                <a href="dang_ky_thue.php"
-                   class="btn btn-warning btn-sm w-100 mt-3 fw-semibold">
-                    <i class="bi bi-pencil-square me-2"></i>Đăng ký tham quan ngay
+                <a href="dang_ky_thue.php" class="btn-premium-outline btn-sm py-2">
+                   ĐĂNG KÝ THAM QUAN <i class="bi bi-arrow-right ms-2"></i>
                 </a>
             </div>
 
-        </div><!-- end row -->
-    </div><!-- end container -->
+        </div>
 
-    <!-- ── DÒNG BẢN QUYỀN ─────────────────────────────────── -->
-    <div class="border-top mt-4 pt-3" style="border-color:#2d4a6e !important;">
-        <div class="container">
-            <div class="row align-items-center small" style="color:#7a8a9e;">
-                <div class="col-md-6 text-center text-md-start">
-                    © <?php echo date('Y'); ?> CAOCENTER – Hệ thống Quản lý Cho thuê Cao ốc.
-                    Đồ án môn Lập trình Web – ĐH An Giang.
-                </div>
-                <div class="col-md-6 text-center text-md-end mt-2 mt-md-0">
-                    Thực hiện bởi:
-                    <strong class="text-warning">Trần Trí Nhân</strong> &
-                    <strong class="text-warning">Huỳnh Minh Nhật</strong>
-                    – Lớp DH24TH2
-                </div>
+        <!-- ── COPYRIGHT LINE ── -->
+        <div class="copyright d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div class="mb-3 mb-md-0">
+                © <?php echo date('Y'); ?> CAOCENTER. THỰC HIỆN BỞI TEAM DH24TH2.
+            </div>
+            <div class="d-flex gap-4">
+                <span style="opacity: 0.5;">DTH235712 - DTH235713</span>
             </div>
         </div>
     </div>
-
 </footer>
 
-<!-- ── BOOTSTRAP JS ───────────────────────────────────────── -->
+<!-- ── SCRIPTS ── -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

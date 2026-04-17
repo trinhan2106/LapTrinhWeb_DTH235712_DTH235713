@@ -47,5 +47,7 @@
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: rgba(26, 26, 26, 0.4);
+    color: var(--text-black);
+    font-weight: 600;
+    opacity: 0.8;
 }

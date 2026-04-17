@@ -98,7 +98,7 @@
     font-size: 0.75rem;
     text-transform: uppercase;
     letter-spacing: 0.1em;
-    color: var(--accent-gold);
+    color: var(--text-black);
     font-weight: 600;
     margin-bottom: 0.5rem;
     display: block;
@@ -136,4 +136,50 @@
 
 .input-group-editorial .form-premium-control {
     border: none;
+}
+
+/* ── UTILITIES & MODIFIERS ── */
+
+/* Text colors */
+.text-premium-black { color: var(--text-black) !important; }
+.text-premium-gold { color: var(--accent-gold) !important; }
+
+/* Placeholder Ảnh */
+.card-phong-img-placeholder {
+    background-color: #F2F0EE; /* Neutral light gray */
+    height: 180px;
+}
+.card-phong-img-placeholder i {
+    color: var(--text-black);
+    opacity: 0.15; /* Watermark effect */
+}
+
+/* Tên phòng trong card */
+.card-phong-title {
+    color: var(--text-black);
+    font-family: var(--font-serif);
+    font-weight: 700;
+}
+
+/* Nút dạng link (Secondary Action) */
+.btn-premium-link {
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--text-black);
+    background: transparent;
+    border: none;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    padding: 0.5rem 1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    transition: var(--transition-base);
+    font-weight: 500;
+}
+.btn-premium-link:hover {
+    color: var(--accent-gold);
 }

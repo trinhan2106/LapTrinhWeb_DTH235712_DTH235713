@@ -279,15 +279,14 @@ $queryFilter = http_build_query([
                         <div class="card card-phong shadow-sm h-100">
 
                             <!-- Ảnh đại diện (placeholder) + Badge -->
-                            <div class="position-relative overflow-hidden"
-                                 style="height:160px; background: linear-gradient(135deg, #e8f0fe, #c3d3f0);">
+                            <div class="position-relative overflow-hidden card-phong-img-placeholder">
                                 <div class="d-flex align-items-center justify-content-center h-100">
-                                    <i class="bi bi-building" style="font-size:3.5rem; color:#4a7cc7; opacity:.35;"></i>
+                                    <i class="bi bi-building" style="font-size:5rem;"></i>
                                 </div>
-                                <span class="badge bg-success position-absolute top-0 end-0 m-2">
-                                    ✅ Trống
+                                <span class="badge bg-white text-dark border border-dark position-absolute top-0 end-0 m-2 px-2 py-1" style="font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em;">
+                                    Trống
                                 </span>
-                                <span class="badge bg-dark bg-opacity-60 position-absolute bottom-0 start-0 m-2">
+                                <span class="badge bg-white text-dark border border-dark position-absolute bottom-0 start-0 m-2" style="font-family: var(--font-mono); font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.05em;">
                                     <?php echo e($row['tenCaoOc']); ?> – Tầng <?php echo e($row['soTang']); ?>
                                 </span>
                             </div>
@@ -295,7 +294,7 @@ $queryFilter = http_build_query([
                             <!-- Nội dung card -->
                             <div class="card-body p-3">
                                 <!-- Mã phòng -->
-                                <h6 class="card-title fw-bold text-primary mb-1">
+                                <h6 class="card-title mb-1 card-phong-title">
                                     <?php echo e($row['maPhong']); ?>
                                 </h6>
 
@@ -331,15 +330,15 @@ $queryFilter = http_build_query([
                             </div><!-- end card-body -->
 
                             <!-- Nút hành động -->
-                            <div class="card-footer bg-transparent border-0 pb-3 px-3 pt-0">
-                                <div class="d-grid gap-2">
+                            <div class="card-footer bg-transparent border-0 pb-4 px-3 pt-0">
+                                <div class="d-flex flex-column gap-2">
                                     <a href="dang_ky_thue.php?maPhong=<?php echo urlencode($row['maPhong']); ?>"
-                                       class="btn btn-gold btn-sm fw-semibold">
-                                        <i class="bi bi-pencil-square me-1"></i>Đăng ký thuê
+                                       class="btn btn-premium-gold w-100" style="padding: 0.6rem 1rem;">
+                                        Đăng ký thuê
                                     </a>
                                     <a href="chi_tiet_phong.php?id=<?php echo urlencode($row['maPhong']); ?>"
-                                       class="btn btn-outline-secondary btn-sm">
-                                        <i class="bi bi-eye me-1"></i>Chi tiết
+                                       class="btn-premium-link w-100">
+                                        Chi tiết
                                     </a>
                                 </div>
                             </div>

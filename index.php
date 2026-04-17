@@ -146,10 +146,9 @@ $totalPhongTrong = $result_count ? (int)$result_count->fetch_assoc()['total'] : 
                 <div class="card card-phong shadow-sm">
 
                     <!-- Ảnh đại diện phòng (placeholder SVG – thay bằng ảnh thực tế) -->
-                    <div class="position-relative overflow-hidden"
-                         style="height:180px; background: linear-gradient(135deg, #e8f0fe, #c3d3f0);">
+                    <div class="position-relative overflow-hidden card-phong-img-placeholder">
                         <div class="d-flex align-items-center justify-content-center h-100">
-                            <i class="bi bi-building" style="font-size:4rem; color:#4a7cc7; opacity:.4;"></i>
+                            <i class="bi bi-building" style="font-size:5rem;"></i>
                         </div>
                         <!-- Badge "Trống" -->
                         <span class="badge bg-success position-absolute top-0 end-0 m-2 px-2 py-1">
@@ -166,10 +165,10 @@ $totalPhongTrong = $result_count ? (int)$result_count->fetch_assoc()['total'] : 
 
                         <!-- Mã phòng + tên cao ốc -->
                         <div class="d-flex justify-content-between align-items-start mb-1">
-                            <h6 class="card-title fw-bold mb-0 text-primary">
+                            <h6 class="card-title mb-0 card-phong-title">
                                 <?php echo e($row['maPhong']); ?>
                             </h6>
-                            <small class="text-muted"><?php echo e($row['tenCaoOc']); ?></small>
+                            <small class="text-muted label-mono"><?php echo e($row['tenCaoOc']); ?></small>
                         </div>
 
                         <!-- Địa chỉ -->
@@ -207,15 +206,15 @@ $totalPhongTrong = $result_count ? (int)$result_count->fetch_assoc()['total'] : 
                     </div><!-- end card-body -->
 
                     <!-- Nút hành động -->
-                    <div class="card-footer bg-transparent border-top-0 pb-3 px-3">
-                        <div class="d-grid gap-2">
+                    <div class="card-footer bg-transparent border-top-0 pb-4 px-4">
+                        <div class="d-flex flex-column gap-2">
                             <a href="<?php echo BASE_URL; ?>/dang_ky_thue.php?maPhong=<?php echo urlencode($row['maPhong']); ?>"
-                               class="btn-premium-gold btn-sm">
-                                <i class="bi bi-pencil-square me-2"></i>Đăng ký thuê phòng này
+                               class="btn btn-premium-gold w-100" style="padding: 0.6rem 1rem;">
+                                Đăng ký thuê
                             </a>
                             <a href="<?php echo BASE_URL; ?>/chi_tiet_phong.php?id=<?php echo urlencode($row['maPhong']); ?>"
-                               class="btn-premium-outline btn-sm">
-                                <i class="bi bi-eye me-2"></i>Xem chi tiết
+                               class="btn-premium-link w-100">
+                                Xem chi tiết
                             </a>
                         </div>
                     </div>
@@ -247,29 +246,29 @@ $totalPhongTrong = $result_count ? (int)$result_count->fetch_assoc()['total'] : 
         <div class="row g-4 text-center">
             <div class="col-md-3">
                 <div class="p-4">
-                    <i class="bi bi-shield-check fs-1 text-primary mb-3 d-block"></i>
-                    <h6 class="fw-bold">An ninh 24/7</h6>
+                    <i class="bi bi-shield-check fs-1 text-premium-black mb-3 d-block" style="font-weight: 300; opacity: 0.8;"></i>
+                    <h6 class="fw-bold text-premium-black">An ninh 24/7</h6>
                     <p class="text-muted small">Hệ thống camera và bảo vệ chuyên nghiệp hoạt động liên tục.</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="p-4">
-                    <i class="bi bi-lightning-charge fs-1 text-warning mb-3 d-block"></i>
-                    <h6 class="fw-bold">Điện nước ổn định</h6>
+                    <i class="bi bi-lightning-charge fs-1 text-premium-black mb-3 d-block" style="font-weight: 300; opacity: 0.8;"></i>
+                    <h6 class="fw-bold text-premium-black">Điện nước ổn định</h6>
                     <p class="text-muted small">Hệ thống điện dự phòng, nước sạch đảm bảo 24/24.</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="p-4">
-                    <i class="bi bi-wifi fs-1 text-success mb-3 d-block"></i>
-                    <h6 class="fw-bold">Internet tốc độ cao</h6>
+                    <i class="bi bi-wifi fs-1 text-premium-black mb-3 d-block" style="font-weight: 300; opacity: 0.8;"></i>
+                    <h6 class="fw-bold text-premium-black">Internet tốc độ cao</h6>
                     <p class="text-muted small">Đường truyền fiber quang, backup 4G tốc độ cao.</p>
                 </div>
             </div>
             <div class="col-md-3">
                 <div class="p-4">
-                    <i class="bi bi-headset fs-1 text-danger mb-3 d-block"></i>
-                    <h6 class="fw-bold">Hỗ trợ tận tâm</h6>
+                    <i class="bi bi-headset fs-1 text-premium-black mb-3 d-block" style="font-weight: 300; opacity: 0.8;"></i>
+                    <h6 class="fw-bold text-premium-black">Hỗ trợ tận tâm</h6>
                     <p class="text-muted small">Đội ngũ quản lý tòa nhà luôn sẵn sàng hỗ trợ.</p>
                 </div>
             </div>

@@ -95,14 +95,14 @@ $totalPhongTrong = $result_count ? (int)$result_count->fetch_assoc()['total'] : 
 
     <!-- ── THANH TÌM KIẾM NHANH (INLINE) ── -->
     <form method="GET" action="<?php echo BASE_URL; ?>/index.php"
-          class="row g-2 mb-5 p-4 bg-white border-bottom border-top">
+          class="row g-3 mb-5 p-4 bg-white border-bottom border-top align-items-end px-lg-5">
         <div class="col-md-4">
             <label class="form-premium-label">Từ khóa</label>
             <input type="text" name="timkiem" class="form-premium-control"
                    placeholder="🔍 Tìm theo mã phòng, tên cao ốc..."
                    value="<?php echo e($loc_timkiem); ?>">
         </div>
-        <div class="col-md-3">
+        <div class="col-md-4">
             <label class="form-premium-label">Diện tích</label>
             <select name="dienTich_min" class="form-premium-control">
                 <option value="">Tất cả diện tích</option>
